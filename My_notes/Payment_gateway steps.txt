@@ -1,0 +1,49 @@
+🏦 STEP 1: Choose Payment Gateway
+🇮🇳 For Indian Market (Recommended):
+Razorpay - Most popular, easy setup, supports UPI, Cards, Net Banking
+PayU - Good alternative, competitive rates
+Paytm - Popular for mobile users
+Cashfree - Good for startups
+🌍 For International:
+Stripe - Global standard, excellent documentation
+PayPal - International customers
+Square - Good for US market
+💡 My Recommendation: Start with Razorpay - easiest for Indian jewellery business
+
+📋 STEP 2: Get Business Documents Ready
+Required Documents:
+Business Registration
+GST Registration (mandatory for e-commerce)
+Shop Act License or Company Incorporation
+Bank Account
+Current Account (not savings account)
+Bank statement (last 6 months)
+Identity Documents
+PAN Card (Business PAN if registered)
+Aadhar Card of authorized signatory
+Address Proof
+Business address proof (rent agreement/utility bill)
+Cancelled cheque
+
+🌐 STEP 3: Create Payment Gateway Account
+For Razorpay:
+Visit razorpay.com
+Click "Sign Up" → "Create Business Account"
+Fill business details:
+Business name: "R&S Jewellery"
+Business type: "E-commerce"
+Website URL: "your-website-domain.com"
+Complete KYC verification (upload documents)
+Get API Keys:
+Test Key ID & Test Key Secret (for development)
+Live Key ID & Live Key Secret (for production)
+
+
+💻 STEP 4: Install Payment Gateway Package
+Command cd, npm in …\jewellery-store
+
+cd "c:\Users\Roshan_Sawkar\CascadeProjects\jewellery-store" && npm install razorpay
+Canceled terminal command
+Feedback submitted
+
+

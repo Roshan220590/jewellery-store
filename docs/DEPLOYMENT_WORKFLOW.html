@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>R&S Jewellery - Daily Deployment Workflow</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 30px;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #D4AF37;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #1a1a1a;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .header h2 {
+            color: #D4AF37;
+            font-size: 1.8em;
+            margin: 10px 0;
+        }
+        h1 {
+            color: #D4AF37;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1a1a1a;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 25px;
+        }
+        code {
+            background: #f8f8f8;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #ddd;
+        }
+        pre {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #D4AF37;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        strong {
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+        .critical-box {
+            background: #ffe6e6;
+            border: 2px solid #ff4444;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .success-box {
+            background: #e6ffe6;
+            border: 2px solid #44ff44;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .tip-box {
+            background: #fff9e6;
+            border: 2px solid #D4AF37;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        .workflow-step {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #D4AF37;
+        }
+        .time-box {
+            background: #e6f3ff;
+            border: 2px solid #0066cc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        @media print {
+            body { margin: 15px; font-size: 12pt; }
+            .workflow-step { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>R&S Jewellery</h1>
+        <h2>Daily Deployment Workflow Guide</h2>
+        <p>Essential guide for updating your live website</p>
+        <p>Generated: <span id="date"></span></p>
+    </div>
+
+    <div class="critical-box">
+        <h2>🚨 CRITICAL INFORMATION</h2>
+        <p><strong>You MUST rebuild and upload after making ANY changes to see them on your live website!</strong></p>
+        <p>Your local changes will NOT appear on the live site until you follow this workflow.</p>
+    </div>
+
+    <h1>🔄 Understanding the Workflow</h1>
+
+    <h2>Development vs Production</h2>
+    <div class="tip-box">
+        <h3>Two Separate Environments:</h3>
+        <ul>
+            <li><strong>Development:</strong> Your source code (<code>src/</code> folder) - for testing</li>
+            <li><strong>Production:</strong> Built code (<code>dist/</code> folder) - for live website</li>
+            <li><strong>Server:</strong> Only sees the <code>dist</code> folder</li>
+            <li><strong>Changes:</strong> Only appear after rebuilding and uploading</li>
+        </ul>
+    </div>
+
+    <h2>Why This Process is Necessary</h2>
+    <ol>
+        <li><strong>React Build Process:</strong> Your source code must be compiled/optimized</li>
+        <li><strong>Performance:</strong> Production code is optimized for speed</li>
+        <li><strong>Security:</strong> Source code is not exposed on live server</li>
+        <li><strong>Reliability:</strong> Built code ensures consistent performance</li>
+    </ol>
+
+    <h1>⚡ Daily Update Process</h1>
+
+    <div class="workflow-step">
+        <h2>Step 1: Make Your Changes</h2>
+        <p>Edit your source files in the <code>src/</code> folder:</p>
+        <ul>
+            <li>Add new products in <code>src/data/products.js</code></li>
+            <li>Update prices, descriptions, stock status</li>
+            <li>Change brand information in <code>src/components/Header.jsx</code></li>
+            <li>Update home page content in <code>src/pages/Home.jsx</code></li>
+        </ul>
+    </div>
+
+    <div class="workflow-step">
+        <h2>Step 2: Test Locally</h2>
+        <p>Always test before deploying:</p>
+        <ol>
+            <li>Run: <code>npm run dev</code></li>
+            <li>Open: <code>http://localhost:5173</code></li>
+            <li>Test all changes you made</li>
+            <li>Check mobile view (browser dev tools)</li>
+            <li>Verify images load correctly</li>
+        </ol>
+        <p><strong>Only proceed if everything works locally!</strong></p>
+    </div>
+
+    <div class="workflow-step">
+        <h2>Step 3: Build Production Version</h2>
+        <p>Create optimized code for live server:</p>
+        <ol>
+            <li>Stop development server (Ctrl+C)</li>
+            <li>Run: <code>npm run build</code></li>
+            <li>Wait for "Build complete" message</li>
+            <li>Check that <code>dist</code> folder was created/updated</li>
+        </ol>
+        <pre>Build output should show:
+✓ Built successfully
+✓ Production ready
+✓ File size optimized</pre>
+    </div>
+
+    <div class="workflow-step">
+        <h2>Step 4: Upload to Server</h2>
+        <p>Replace the old <code>dist</code> folder on your server:</p>
+        <ol>
+            <li>Connect to your hosting (FTP, cPanel, etc.)</li>
+            <li>Delete the old <code>dist</code> folder on server</li>
+            <li>Upload the new <code>dist</code> folder from your computer</li>
+            <li>Wait for upload to complete</li>
+            <li>Verify all files uploaded successfully</li>
+        </ol>
+    </div>
+
+    <div class="workflow-step">
+        <h2>Step 5: Verify Live Website</h2>
+        <p>Test your live website:</p>
+        <ol>
+            <li>Open your live website URL</li>
+            <li>Hard refresh (Ctrl+F5 or Cmd+Shift+R)</li>
+            <li>Check that your changes appear</li>
+            <li>Test new products, prices, etc.</li>
+            <li>Test mobile version</li>
+            <li>Check contact forms if updated</li>
+        </ol>
+    </div>
+
+    <h1>📅 Practical Daily Schedule</h1>
+
+    <div class="tip-box">
+        <h2>Example - Typical Day</h2>
+        <h3>Morning (9:00 AM - 11:00 AM)</h3>
+        <ol>
+            <li>9:00 AM - Add 3 new necklace products</li>
+            <li>9:20 AM - Update prices on 10 existing items</li>
+            <li>9:40 AM - Change stock status for 5 items</li>
+            <li>10:00 AM - Test all changes locally</li>
+            <li>10:30 AM - Build production version</li>
+        </ol>
+
+        <h3>Afternoon (2:00 PM - 2:30 PM)</h3>
+        <ol>
+            <li>2:00 PM - Upload <code>dist</code> folder to server</li>
+            <li>2:10 PM - Test live website</li>
+            <li>2:20 PM - Verify all changes are live</li>
+            <li>2:30 PM - Done! All updates live</li>
+        </ol>
+    </div>
+
+    <h1>⏰ Time Investment Guide</h1>
+
+    <div class="time-box">
+        <h2>Realistic Time Expectations</h2>
+        <table>
+            <tr><th>Update Type</th><th>Preparation Time</th><th>Build & Upload</th><th>Total Time</th></tr>
+            <tr><td>Price Changes (5-10 items)</td><td>5 minutes</td><td>5 minutes</td><td>10 minutes</td></tr>
+            <tr><td>Add New Products (3-5 items)</td><td>15 minutes</td><td>10 minutes</td><td>25 minutes</td></tr>
+            <tr><td>Category Updates</td><td>20 minutes</td><td>10 minutes</td><td>30 minutes</td></tr>
+            <tr><td>Major Content Changes</td><td>45 minutes</td><td>15 minutes</td><td>60 minutes</td></tr>
+        </table>
+    </div>
+
+    <h1>💡 Smart Workflow Tips</h1>
+
+    <h2>Batch Your Changes</h2>
+    <div class="success-box">
+        <h3>Efficiency Strategy:</h3>
+        <ul>
+            <li><strong>Don't upload after every small change</strong></li>
+            <li><strong>Make multiple changes</strong> then build once</li>
+            <li><strong>Example:</strong> Add 5 products, update 10 prices, change stock - then upload once</li>
+            <li><strong>Saves 50-70% time</strong> compared to individual uploads</li>
+        </ul>
+    </div>
+
+    <h2>Update Schedule Recommendations</h2>
+    <table>
+        <tr><th>Frequency</th><th>Typical Changes</th><th>Best Practice</th></tr>
+        <tr><td>Daily</td><td>Price changes, stock updates, new arrivals</td><td>Batch changes, upload once</td></tr>
+        <tr><td>Weekly</td><td>New products, category updates, content changes</td><td>Schedule specific day/time</td></tr>
+        <tr><td>Monthly</td><td>Major updates, brand changes, new features</td><td>Plan ahead, test thoroughly</td></tr>
+    </table>
+
+    <h1>🚨 Common Mistakes to Avoid</h1>
+
+    <div class="critical-box">
+        <h2>Critical Errors</h2>
+        <h3>❌ Making Changes but Not Uploading</h3>
+        <p>Your local changes will NEVER appear on live site without rebuilding and uploading!</p>
+
+        <h3>❌ Testing Only After Upload</h3>
+        <p>Always test locally first. Broken code on live site loses customers!</p>
+
+        <h3>❌ Not Keeping Backups</h3>
+        <p>Keep previous working <code>dist</code> folder until new version is verified</p>
+
+        <h3>❌ Uploading Partial Files</h3>
+        <p>Always upload the complete <code>dist</code> folder. React needs all files together</p>
+    </div>
+
+    <h1>🛠️ Troubleshooting Deployment Issues</h1>
+
+    <h2>Build Fails</h2>
+    <ol>
+        <li>Check for syntax errors in your code</li>
+        <li>Ensure all brackets and commas are correct</li>
+        <li>Verify image URLs are accessible</li>
+        <li>Check console for specific error messages</li>
+    </ol>
+
+    <h2>Upload Issues</h2>
+    <ol>
+        <li>Verify internet connection</li>
+        <li>Check server credentials</li>
+        <li>Ensure sufficient disk space on server</li>
+        <li>Try uploading smaller chunks if connection is slow</li>
+    </ol>
+
+    <h2>Changes Not Visible After Upload</h2>
+    <ol>
+        <li>Hard refresh browser (Ctrl+F5)</li>
+        <li>Clear browser cache</li>
+        <li>Check if CDN is caching old version</li>
+        <li>Verify correct <code>dist</code> folder was uploaded</li>
+    </ol>
+
+    <h1>📞 Quick Reference Checklist</h1>
+
+    <div class="workflow-step">
+        <h2>Before Every Upload</h2>
+        <ul>
+            <li>☐ All changes made in source files</li>
+            <li>☐ Tested locally (npm run dev)</li>
+            <li>☐ All changes working correctly</li>
+            <li>☐ Mobile view tested</li>
+            <li>☐ Images loading properly</li>
+            <li>☐ No console errors</li>
+        </ul>
+    </div>
+
+    <div class="workflow-step">
+        <h2>After Every Upload</h2>
+        <ul>
+            <li>☐ Live website loads correctly</li>
+            <li>☐ All changes visible</li>
+            <li>☐ New products display</li>
+            <li>☐ Prices updated correctly</li>
+            <li>☐ Mobile version works</li>
+            <li>☐ Contact forms functional</li>
+            <li>☐ Backup of old version kept</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p><strong>R&S Jewellery - Daily Deployment Workflow Guide</strong></p>
+        <p>Generated: <span id="footer-date"></span></p>
+        <p><em>Remember: Test locally, build production, upload dist folder, verify live site!</em></p>
+        <p><strong>Golden Rule: If you didn't rebuild and upload, your changes aren't live!</strong></p>
+    </div>
+
+    <script>
+        document.getElementById('date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        document.getElementById('footer-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>

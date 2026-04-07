@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Bulk Product Import Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #D4AF37, #F4E4C1);
+            color: #1a1a1a;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #D4AF37;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #D4AF37;
+            padding-bottom: 10px;
+        }
+        
+        .table-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .field-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #D4AF37;
+        }
+        
+        .field-card h4 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .field-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .csv-example {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        .csv-header {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .csv-row {
+            padding: 8px;
+            border-bottom: 1px solid #dee2e6;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .steps {
+            counter-reset: step-counter;
+        }
+        
+        .step {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+        
+        .step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #D4AF37;
+            color: #1a1a1a;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .step h3 {
+            color: #D4AF37;
+            margin-bottom: 10px;
+        }
+        
+        .tips {
+            background: #e8f4f8;
+            border-left: 5px solid #17a2b8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .tips h4 {
+            color: #17a2b8;
+            margin-bottom: 10px;
+        }
+        
+        .tips ul {
+            margin-left: 20px;
+        }
+        
+        .tips li {
+            margin-bottom: 8px;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .warning h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .success {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .success h4 {
+            color: #155724;
+            margin-bottom: 10px;
+        }
+        
+        .size-guide {
+            background: #f0f8f0;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .size-table th {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .size-table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #D4AF37, #F4E4C1);
+            color: #1a1a1a;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .table-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📦 Enhanced Bulk Product Import Guide</h1>
+            <p>Complete guide to importing products with all advanced features including category-specific sizing</p>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Overview</h2>
+            <p>The Enhanced Bulk Import system allows you to import 100+ products with all the same features as the Add Product form, including:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>✅ Category-specific sizing (rings, bangles, necklaces, etc.)</li>
+                <li>✅ Complete product specifications (materials, occasions, weight, dimensions)</li>
+                <li>✅ Cost management (purchase price, packaging, logistics)</li>
+                <li>✅ Advanced product details (SKU, rating, badges)</li>
+                <li>✅ Multiple images per product</li>
+                <li>✅ Inventory management</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📋 Complete Field Reference</h2>
+            <div class="table-grid">
+                <div class="field-card">
+                    <h4>🆔 Basic Information</h4>
+                    <p><strong>id:</strong> Unique product ID<br>
+                    <strong>name:</strong> Product name<br>
+                    <strong>category:</strong> Jewelry category<br>
+                    <strong>description:</strong> Product description<br>
+                    <strong>sku:</strong> Product SKU code</p>
+                </div>
+                
+                <div class="field-card">
+                    <h4>💰 Pricing</h4>
+                    <p><strong>price:</strong> Sale price<br>
+                    <strong>originalPrice:</strong> Original price<br>
+                    <strong>rating:</strong> Customer rating (1-5)</p>
+                </div>
+                
+                <div class="field-card">
+                    <h4>📦 Inventory</h4>
+                    <p><strong>inStock:</strong> true/false<br>
+                    <strong>stockCount:</strong> Available quantity<br>
+                    <strong>isNewArrival:</strong> true/false</p>
+                </div>
+                
+                <div class="field-card">
+                    <h4>🏷️ Display Options</h4>
+                    <p><strong>badge:</strong> NEW, SALE, etc.<br>
+                    <strong>badgeColor:</strong> bg-green-500, bg-red-500<br>
+                    <strong>isFeatured:</strong> true/false</p>
+                </div>
+                
+                <div class="field-card">
+                    <h4>📏 Specifications</h4>
+                    <p><strong>sizes:</strong> Category-specific sizes<br>
+                    <strong>materials:</strong> Material types<br>
+                    <strong>occasions:</strong> Usage occasions<br>
+                    <strong>weight:</strong> Product weight<br>
+                    <strong>dimensions:</strong> Size dimensions</p>
+                </div>
+                
+                <div class="field-card">
+                    <h4>💸 Cost Management</h4>
+                    <p><strong>cost_purchasePrice:</strong> What you paid<br>
+                    <strong>cost_packagingCost:</strong> Packaging<br>
+                    <strong>cost_logisticsCost:</strong> Shipping<br>
+                    <strong>cost_otherCharges:</strong> Other costs</p>
+                </div>
+                
+                <div class="field-card">
+                    <h4>🖼️ Images</h4>
+                    <p><strong>images:</strong> Image URLs (semicolon separated)<br>
+                    Format: "url1;url2;url3"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📏 Category-Specific Sizing</h2>
+            <div class="size-guide">
+                <h4>Available Size Options by Category:</h4>
+                <table class="size-table">
+                    <tr>
+                        <th>Category</th>
+                        <th>Size System</th>
+                        <th>Available Sizes</th>
+                    </tr>
+                    <tr>
+                        <td>rings</td>
+                        <td>US Ring Sizes</td>
+                        <td>4,5,6,7,8,9,10,11,12</td>
+                    </tr>
+                    <tr>
+                        <td>bangles</td>
+                        <td>Diameter (inches)</td>
+                        <td>2.2,2.4,2.6,2.8,3.0,3.2,3.4</td>
+                    </tr>
+                    <tr>
+                        <td>bracelets</td>
+                        <td>Length (inches)</td>
+                        <td>6,6.5,7,7.5,8,8.5,9</td>
+                    </tr>
+                    <tr>
+                        <td>necklaces</td>
+                        <td>Length (inches)</td>
+                        <td>16,18,20,22,24,26,28</td>
+                    </tr>
+                    <tr>
+                        <td>earrings</td>
+                        <td>Standard</td>
+                        <td>Free Size</td>
+                    </tr>
+                    <tr>
+                        <td>chains</td>
+                        <td>Length (inches)</td>
+                        <td>16,18,20,22,24,26,28</td>
+                    </tr>
+                    <tr>
+                        <td>pendants</td>
+                        <td>Standard</td>
+                        <td>Free Size</td>
+                    </tr>
+                </table>
+                
+                <div class="tips">
+                    <h4>💡 Size Usage Tips:</h4>
+                    <ul>
+                        <li><strong>Multiple Sizes:</strong> Separate with semicolon: "6;7;8"</li>
+                        <li><strong>Single Size:</strong> Just one value: "Free Size"</li>
+                        <li><strong>No Sizes:</strong> Leave empty for default sizing</li>
+                        <li><strong>Category Match:</strong> Sizes must match category options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📝 Step-by-Step Import Process</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>Step 1: Download Template</h3>
+                    <p>Download the enhanced CSV template with all fields pre-configured.</p>
+                    <a href="product_import_template.csv" download class="download-btn">📥 Download Enhanced Template</a>
+                </div>
+                
+                <div class="step">
+                    <h3>Step 2: Prepare Your Data</h3>
+                    <p>Fill in the CSV file with your product information. Use the field reference above to ensure correct formatting.</p>
+                </div>
+                
+                <div class="step">
+                    <h3>Step 3: Upload CSV File</h3>
+                    <p>Go to Admin Dashboard → Bulk Import → Choose File → Upload your prepared CSV.</p>
+                </div>
+                
+                <div class="step">
+                    <h3>Step 4: Review Preview</h3>
+                    <p>The system will show a preview of your products. Review for any errors or missing information.</p>
+                </div>
+                
+                <div class="step">
+                    <h3>Step 5: Import Products</h3>
+                    <p>Click "Import Products" to add all products to your inventory with full details.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📄 CSV Format Examples</h2>
+            <div class="csv-example">
+                <div class="csv-header">Complete CSV Header:</div>
+                <div class="csv-row">id,name,category,price,originalPrice,description,inStock,stockCount,isNewArrival,badge,badgeColor,rating,sizes,materials,occasions,weight,dimensions,sku,cost_purchasePrice,cost_packagingCost,cost_logisticsCost,cost_otherCharges,images</div>
+                
+                <h4 style="margin-top: 20px;">📝 Sample Product Entries:</h4>
+                
+                <div class="csv-row" style="margin-top: 15px;">
+                    <strong>Ring Example:</strong><br>
+                    105,"Diamond Wedding Ring","rings",12999,15999,"Beautiful diamond ring for weddings",true,5,true,"NEW","bg-green-500",4.9,"6;7;8","Gold Plated;Diamond","Wedding","8g","1cm x 1cm","RS-RING-001",8000,200,300,150,"https://i.imgur.com/ring1.jpg;https://i.imgur.com/ring2.jpg"
+                </div>
+                
+                <div class="csv-row">
+                    <strong>Bangles Example:</strong><br>
+                    106,"Traditional Gold Bangles","bangles",8999,10999,"Traditional Indian gold bangles set",true,3,true,"NEW","bg-green-500",4.7,"2.4;2.6","Gold Plated","Traditional","25g","0.5cm x 7cm","RS-BANG-001",6000,300,400,200,"https://i.imgur.com/bangle1.jpg"
+                </div>
+                
+                <div class="csv-row">
+                    <strong>Earrings Example:</strong><br>
+                    107,"Silver Stud Earrings","earrings",1299,1599,"Elegant silver studs for daily wear",true,25,false,"SALE","bg-red-500",4.5,"Free Size","Silver Plated","Daily","5g","1cm x 1cm","RS-EAR-001",800,100,150,50,"https://i.imgur.com/earring1.jpg"
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Field Formatting Guide</h2>
+            <div class="table-grid">
+                <div class="field-card">
+                    <h4>📊 Number Fields</h4>
+                    <p><strong>Format:</strong> Plain numbers<br>
+                    <strong>Examples:</strong> 2999, 25, 4.5<br>
+                    <strong>Fields:</strong> price, stockCount, rating, cost fields</p>
+                </div>
+                
+                <div class="field-card">
+                    <h4>✅ Boolean Fields</h4>
+                    <p><strong>Format:</strong> true/false<br>
+                    <strong>Examples:</strong> true, false<br>
+                    <strong>Fields:</strong> inStock, isNewArrival, isFeatured</p>
+                </div>
+                
+                <div class="field-card">
+                    <h4>🏷️ Multiple Values</h4>
+                    <p><strong>Format:</strong> Semicolon separated<br>
+                    <strong>Examples:</strong> "6;7;8", "Gold;Silver"<br>
+                    <strong>Fields:</strong> sizes, materials, occasions, images</p>
+                </div>
+                
+                <div class="field-card">
+                    <h4>📝 Text Fields</h4>
+                    <p><strong>Format:</strong> Quoted text<br>
+                    <strong>Examples:</strong> "Product Name", "Description"<br>
+                    <strong>Fields:</strong> name, description, badge, sku</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>⚠️ Important Guidelines</h2>
+            <div class="warning">
+                <h4>⚠️ Critical Requirements:</h4>
+                <ul>
+                    <li><strong>Required Fields:</strong> name, category, price, stockCount</li>
+                    <li><strong>Category Validity:</strong> Category must exist in your system</li>
+                    <li><strong>Size Consistency:</strong> Sizes must match category options</li>
+                    <li><strong>Image URLs:</strong> Must be valid, accessible URLs</li>
+                    <li><strong>Unique IDs:</strong> Each product needs a unique ID</li>
+                    <li><strong>CSV Format:</strong> Use proper CSV formatting with quotes</li>
+                </ul>
+            </div>
+            
+            <div class="tips">
+                <h4>💡 Best Practices:</h4>
+                <ul>
+                    <li><strong>Test Small:</strong> Start with 5-10 products to test</li>
+                    <li><strong>Backup Data:</strong> Backup your current inventory first</li>
+                    <li><strong>Validate URLs:</strong> Test image URLs before import</li>
+                    <li><strong>Check Categories:</strong> Ensure all categories exist</li>
+                    <li><strong>Review Preview:</strong> Always check the preview before importing</li>
+                    <li><strong>Cost Accuracy:</strong> Double-check cost calculations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Advanced Features</h2>
+            <div class="success">
+                <h4>✅ What Gets Imported:</h4>
+                <ul>
+                    <li><strong>Complete Product Data:</strong> All fields from Add Product form</li>
+                    <li><strong>Cost Tracking:</strong> Full cost management with profit calculations</li>
+                    <li><strong>Category Intelligence:</strong> Smart size validation by category</li>
+                    <li><strong>Image Management:</strong> Multiple images per product</li>
+                    <li><strong>Inventory Updates:</strong> Stock levels and availability</li>
+                    <li><strong>SEO Data:</strong> SKUs, ratings, and badges</li>
+                </ul>
+            </div>
+            
+            <div class="tips">
+                <h4>🔧 Technical Features:</h4>
+                <ul>
+                    <li><strong>Auto-ID Generation:</strong> If ID is empty, system generates one</li>
+                    <li><strong>Cost Calculations:</strong> Automatic profit and margin calculations</li>
+                    <li><strong>Size Validation:</strong> Validates sizes against category options</li>
+                    <li><strong>Error Handling:</strong> Detailed error messages for troubleshooting</li>
+                    <li><strong>Preview System:</strong> See products before importing</li>
+                    <li><strong>Bulk Processing:</strong> Handles 100+ products efficiently</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Quick Start Checklist</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                <h4>✅ Pre-Import Checklist:</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 10px 0;">☐ Download latest CSV template</li>
+                    <li style="margin: 10px 0;">☐ Prepare product images and get URLs</li>
+                    <li style="margin: 10px 0;">☐ List all categories to be used</li>
+                    <li style="margin: 10px 0;">☐ Calculate costs for each product</li>
+                    <li style="margin: 10px 0;">☐ Determine sizes for each category</li>
+                    <li style="margin: 10px 0;">☐ Fill CSV with accurate data</li>
+                    <li style="margin: 10px 0;">☐ Validate CSV formatting</li>
+                    <li style="margin: 10px 0;">☐ Test with small batch (5 products)</li>
+                    <li style="margin: 10px 0;">☐ Review preview and fix errors</li>
+                    <li style="margin: 10px 0;">☐ Import full batch</li>
+                    <li style="margin: 10px 0;">☐ Verify imported products</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

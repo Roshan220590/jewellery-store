@@ -1,0 +1,27 @@
+To see backend can connect to Local MongoDB:
+
+
+Open PowerShell - cd "c:\Users\Roshan_Sawkar\CascadeProjects\jewellery-store\backend"
+node -e "console.log('Testing MongoDB...'); require('mongoose').connect('mongodb://localhost:27017/jewellery-store').then(() => console.log('✅ Connected!')).catch(err => console.error('❌ Error:', err.message))"
+
+
+Next Step: Start Your Backend Server:
+
+command = npm run dev
+
+The backend should start and show: 
+ ✅ Connected to MongoDB
+🚀 Server running on port 5000
+📍 API URL: http://localhost:5000/api
+
+
+After Backend Starts:
+Once your backend is running:
+
+Open a NEW PowerShell window
+Start the frontend
+Test your e-commerce store
+
+
+
+

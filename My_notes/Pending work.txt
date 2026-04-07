@@ -1,0 +1,62 @@
+Dashboard
+adding photos
+adding sign in and sign up
+order place page need to be modified and once order is places new order id should generate and should reflect in data base and dashboard for particular customer will all the
+details with qty, price, other details.
+photo size and category page style should change , little small and interactive
+
+I wanted something in all the product some unique code to be add, based on category and unique code for each product so for better 
+
+backend local mongoDB to server I need to change
+
+domain purchahse
+
+pushing the code to server
+
+
+is there any way we can design such a way that, once order is place, I get the notification in my wats app or msg..
+
+
+Now just tell me, front end, backend, mongo compass and dashboard is ready.... just a question, if I change my laptop what all are I need to do.
+
+now all front end, backend and dashboard url is local host.. how to use in outside of my laptop,, will i get different url for all these
+
+
+I need one more section in dashboard where I can specify my each order additional cost like logistics, packaging and my product cost and total expense and profit for each order.. please think advance and based on that please create one more section left side,, it should be directly link to particular section like orders.. once order is added it also should reflect in newly creating section but other expense like package cost, logistics and other needs a option to add manually
+
+something like this i want.. hope understand
+
+
+Also while ordering and while selecting the quantity, if customer is selecting more and if it is greater than what it is available in stock or product inventory
+is should show the error msg saying, only xxxx qty is available something like this and after ordering if no products are available in stock it should show out of stock something and once we added in our dashboard inventory  it should remove from website something like this.
+
+
+Dashboard, logout need to shift and setting option to reset the password or for other things as exactly same as some live dashboard using some other companies.---- Doneeee
+
+Tomorrow i wanted to add 100 new product with different category and in correct format with all the details.. what is the best way to update or upload...
+is there any excel sheet we can upload to do it fast or what is the way.. how other ecommerce owner are following.  ----- Donnnnneeeee
+
+
+is there any way we can do some changes, once customer placed the order they get the order placed msg with order number and other details how other e com customer get after placing the orders.
+
+
+i also want, once product is places and once it is added to dashboard, i wanted to automatically create invoice copy for the same so that it will be very easy while shipping. 
+
+
+i have a online business but dont have shop.. den how to go with live without GST... bcz for online payment GST is mandatory
+
+
+
+
+YES - Customers can register and then sign in successfully with their credentials!
+
+BUT - This currently uses localStorage (browser storage), not a proper backend database.
+
+Would you like me to:
+
+Keep the current system for now (works great for testing)
+Set up a proper backend with database integration
+Show you how to integrate with Firebase/Supabase
+
+Make this production and backend need to be configured
+

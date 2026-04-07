@@ -1,0 +1,16 @@
+# Excel Template for Bulk Product Import
+# Format: CSV (Comma Separated Values)
+
+# Copy this structure into Excel and save as CSV
+
+id,name,category,price,originalPrice,description,inStock,stockCount,isNewArrival,badge,badgeColor,rating,sizes,materials,occasions,weight,dimensions,sku,cost_purchasePrice,cost_packagingCost,cost_logisticsCost,cost_otherCharges,images
+
+1,"Elegant Wedding Necklace","necklaces",2999,3999,"Beautiful gold-plated necklace perfect for weddings",true,25,true,"NEW","bg-green-500",4.8,"Free Size","Gold Plated","Party","10g","2cm x 3cm","RS-NECK-001",1500,50,100,50,"https://example.com/image1.jpg,https://example.com/image2.jpg"
+
+2,"Stud Earrings Silver","earrings",899,1299,"Elegant silver stud earrings for daily wear",true,50,false,"SALE","bg-red-500",4.5,"Free Size","Silver Plated","Daily","5g","1cm x 1cm","RS-EAR-002",400,30,50,20,"https://example.com/earring1.jpg"
+
+# Instructions:
+# 1. Copy this format into Excel
+# 2. Fill in your 100 products
+# 3. Save as CSV file
+# 4. Use the Bulk Import function in Admin Dashboard

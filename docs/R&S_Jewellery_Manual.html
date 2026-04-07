@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>R&S Jewellery Website - Complete Management Manual</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 30px;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 3px solid #D4AF37;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #1a1a1a;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .header h2 {
+            color: #D4AF37;
+            font-size: 1.8em;
+            margin: 10px 0;
+        }
+        .header p {
+            color: #666;
+            font-style: italic;
+        }
+        h1 {
+            color: #D4AF37;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 10px;
+            page-break-before: always;
+        }
+        h2 {
+            color: #1a1a1a;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        code {
+            background: #f8f8f8;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #ddd;
+        }
+        pre {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #D4AF37;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        strong {
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+        blockquote {
+            border-left: 4px solid #D4AF37;
+            margin: 25px 0;
+            padding: 15px 25px;
+            background: #f9f9f9;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        .tip-box {
+            background: #fff9e6;
+            border: 1px solid #D4AF37;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: #ffe6e6;
+            border: 1px solid #ff4444;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .success-box {
+            background: #e6ffe6;
+            border: 1px solid #44ff44;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        .toc {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .toc h3 {
+            margin-top: 0;
+            color: #D4AF37;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin: 5px 0;
+        }
+        .toc a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            color: #D4AF37;
+            text-decoration: underline;
+        }
+        @media print {
+            body { margin: 15px; font-size: 12pt; }
+            .no-print { display: none; }
+            h1 { page-break-before: always; }
+            pre, blockquote { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>R&S Jewellery</h1>
+        <h2>Complete Website Management Manual</h2>
+        <p>Generated on: <span id="date"></span> | Version 1.0</p>
+    </div>
+
+    <div class="toc">
+        <h3>📋 Table of Contents</h3>
+        <ul>
+            <li><a href="#getting-started">1. Getting Started</a></li>
+            <li><a href="#backup-system">2. 🛡️ Complete Backup System</a></li>
+            <li><a href="#daily-operations">3. Daily Operations</a></li>
+            <li><a href="#product-management">4. Product Management</a></li>
+            <li><a href="#image-management">5. Image Management</a></li>
+            <li><a href="#brand-updates">6. Brand & Content Updates</a></li>
+            <li><a href="#website-deployment">7. Website Deployment</a></li>
+            <li><a href="#troubleshooting">8. Troubleshooting</a></li>
+            <li><a href="#emergency-contacts">9. Emergency Contacts</a></li>
+        </ul>
+        <p><strong>�️ CRITICAL:</strong> See <a href="#backup-system">Section 2 - Complete Backup System</a> before making any changes!</p>
+        <p><strong>�🔄 Important:</strong> See <a href="#website-deployment">Section 7 - Website Deployment</a> for daily update workflow!</p>
+    </div>
+
+    <h1 id="getting-started">🚀 Getting Started</h1>
+
+    <h2>🛡️ CRITICAL: Always Backup Before Changes!</h2>
+    <div class="critical-box">
+        <h3>🚨 Golden Rule: Backup First, Change Second!</h3>
+        <p><strong>NEVER make changes to your website without creating a backup first!</strong></p>
+        <p>One mistake can break your entire website. Backups are your safety net.</p>
+        
+        <h3>⚡ Quick Backup Methods:</h3>
+        <ol>
+            <li><strong>Easiest:</strong> Double-click <code>BACKUP_SYSTEM.bat</code></li>
+            <li><strong>Professional:</strong> Use Git (see GIT_BACKUP_GUIDE.md)</li>
+            <li><strong>Manual:</strong> Copy entire project folder to backup location</li>
+        </ol>
+        
+        <h3>📋 When to Backup:</h3>
+        <ul>
+            <li>✅ Before adding new products</li>
+            <li>✅ Before updating prices</li>
+            <li>✅ Before changing brand information</li>
+            <li>✅ Before deploying to live site</li>
+            <li>✅ Daily (even if no changes)</li>
+        </ul>
+    </div>
+
+    <h2>Starting Your Website</h2>
+    <div class="success-box">
+        <strong>Easy Start:</strong> Double-click <code>START_WEBSITE.bat</code> and choose option 1
+    </div>
+
+    <h3>Manual Start:</h3>
+    <ol>
+        <li>Open Command Prompt/PowerShell</li>
+        <li>Navigate to your project folder</li>
+        <li>Type: <code>npm run dev</code></li>
+        <li>Website opens at: <code>http://localhost:5173</code></li>
+    </ol>
+
+    <h2>Files You Need to Know</h2>
+    <table>
+        <tr><th>Purpose</th><th>File Location</th><th>What You Do Here</th></tr>
+        <tr><td>Products</td><td><code>src/data/products.js</code></td><td>Add/edit products, prices, stock</td></tr>
+        <tr><td>Categories</td><td>Bottom of <code>src/data/products.js</code></td><td>Add/edit product categories</td></tr>
+        <tr><td>Brand Name</td><td><code>src/components/Header.jsx</code></td><td>Change R&S name, tagline</td></tr>
+        <tr><td>Home Page</td><td><code>src/pages/Home.jsx</code></td><td>Hero text, trust badges</td></tr>
+        <tr><td>Contact Info</td><td><code>src/pages/Contact.jsx</code></td><td>Phone, email, address</td></tr>
+    </table>
+
+    <h1 id="backup-system">🛡️ Complete Backup System</h1>
+
+    <h2>Why Backups Are Critical</h2>
+    <div class="critical-box">
+        <h3>🚨 Real Scenarios Where Backups Save You:</h3>
+        <ul>
+            <li><strong>Typo in code:</strong> Website breaks and won't load</li>
+            <li><strong>Deleted wrong file:</strong> Important product data lost</li>
+            <li><strong>Price update mistake:</strong> All prices set to ₹0</li>
+            <li><strong>Computer crash:</strong> Entire project gone</li>
+            <li><strong>Bad deployment:</strong> Live website broken</li>
+        </ul>
+        <p><strong>Backups are your insurance policy!</strong></p>
+    </div>
+
+    <h2>⚡ Quick Backup Methods</h2>
+
+    <h3>Method 1: Automated Backup Script (Easiest)</h3>
+    <div class="success-box">
+        <h4>Double-click: <code>BACKUP_SYSTEM.bat</code></h4>
+        <p>This gives you options:</p>
+        <ul>
+            <li><strong>Quick Backup:</strong> Source code only (2 minutes)</li>
+            <li><strong>Complete Backup:</strong> Everything including dist folder</li>
+            <li><strong>Daily Backup:</strong> Automatic daily backups</li>
+            <li><strong>Restore:</strong> Restore from any backup</li>
+        </ul>
+        <h4>Usage:</h4>
+        <ol>
+            <li>Double-click <code>BACKUP_SYSTEM.bat</code></li>
+            <li>Choose option 1 (Quick Backup)</li>
+            <li>Wait for "Backup Complete!" message</li>
+            <li>Make your changes safely</li>
+        </ol>
+    </div>
+
+    <h3>Method 2: Git Version Control (Professional)</h3>
+    <div class="tip-box">
+        <h4>Industry-standard backup system:</h4>
+        <p>See <code>GIT_BACKUP_GUIDE.md</code> for complete setup</p>
+        <h4>Quick Start:</h4>
+        <ol>
+            <li>Install Git from https://git-scm.com</li>
+            <li>Open Command Prompt in project folder</li>
+            <li>Run: <code>git init</code> (one time only)</li>
+            <li>Before changes: <code>git add . && git commit -m "Backup before changes"</code></li>
+        </ol>
+        <h4>Benefits:</h4>
+        <ul>
+            <li>Track every change with date/time</li>
+            <li>Restore any version instantly</li>
+            <li>Free cloud storage with GitHub</li>
+            <li>Professional version control</li>
+        </ul>
+    </div>
+
+    <h3>Method 3: Manual Copy (Simple)</h3>
+    <div class="tip-box">
+        <h4>Traditional folder copy:</h4>
+        <ol>
+            <li>Right-click <code>jewellery-store</code> folder</li>
+            <li>Choose "Copy"</li>
+            <li>Paste in backup location</li>
+            <li>Rename with date: <code>jewellery-store-backup-2024-03-28</code></li>
+        </ol>
+        <h4>Pros:</h4>
+        <ul>
+            <li>No technical knowledge needed</li>
+            <li>Complete copy of everything</li>
+            <li>Easy to understand</li>
+        </ul>
+        <h4>Cons:</h4>
+        <ul>
+            <li>Uses more storage space</li>
+            <li>No version history</li>
+            <li>Manual process</li>
+        </ul>
+    </div>
+
+    <h2>📅 Backup Schedule</h2>
+
+    <h3>Daily Backup Routine (2 minutes)</h3>
+    <div class="success-box">
+        <h4>Every Morning Before Work:</h4>
+        <ol>
+            <li>Double-click <code>BACKUP_SYSTEM.bat</code></li>
+            <li>Choose option 1 (Quick Backup)</li>
+            <li>Wait for completion</li>
+            <li>Start your work safely</li>
+        </ol>
+        <p><strong>Cost:</strong> 2 minutes | <strong>Benefit:</strong> Complete peace of mind</p>
+    </div>
+
+    <h3>Before Major Changes</h3>
+    <div class="warning-box">
+        <h4>ALWAYS backup before:</h4>
+        <ul>
+            <li>Adding 5+ new products</li>
+            <li>Updating all prices</li>
+            <li>Changing brand information</li>
+            <li>Deploying to live site</li>
+            <li>Making any structural changes</li>
+        </ul>
+    </div>
+
+    <h2>🔄 Restoring from Backup</h2>
+
+    <h3>Using Backup Script</h3>
+    <ol>
+        <li>Double-click <code>BACKUP_SYSTEM.bat</code></li>
+        <li>Choose option 4 (Restore from Backup)</li>
+        <li>Select backup folder from list</li>
+        <li>Confirm restore (Y/N)</li>
+        <li>Files are restored instantly</li>
+    </ol>
+
+    <h3>Using Git</h3>
+    <ol>
+        <li>Open Command Prompt in project folder</li>
+        <li>See all backups: <code>git log --oneline</code></li>
+        <li>Copy commit ID of backup to restore</li>
+        <li>Restore: <code>git reset --hard COMMIT_ID</code></li>
+        <li>Files are restored to that state</li>
+    </ol>
+
+    <h3>Manual Restore</h3>
+    <ol>
+        <li>Delete current <code>jewellery-store</code> folder</li>
+        <li>Copy backup folder to original location</li>
+        <li>Rename back to <code>jewellery-store</code></li>
+        <li>Test website works</li>
+    </ol>
+
+    <h2>🎯 Best Practices</h2>
+
+    <h3>Backup Naming</h3>
+    <div class="tip-box">
+        <h4>Use descriptive names:</h4>
+        <ul>
+            <li>✅ <code>backup-before-summer-collection</code></li>
+            <li>✅ <code>backup-after-price-update</code></li>
+            <li>✅ <code>backup-working-version-2024-03-28</code></li>
+            <li>❌ <code>backup</code></li>
+            <li>❌ <code>copy1</code></li>
+        </ul>
+    </div>
+
+    <h3>Storage Strategy</h3>
+    <ul>
+        <li><strong>Local:</strong> On your computer (fast access)</li>
+        <li><strong>External:</strong> USB drive or external hard drive</li>
+        <li><strong>Cloud:</strong> Google Drive, Dropbox, GitHub</li>
+        <li><strong>Multiple:</strong> Use at least 2 different locations</li>
+    </ul>
+
+    <h3>Retention Policy</h3>
+    <table>
+        <tr><th>Backup Type</th><th>Keep For</th><th>Reason</th></tr>
+        <tr><td>Daily backups</td><td>7 days</td><td>Recent changes</td></tr>
+        <tr><td>Weekly backups</td><td>4 weeks</td><td>Medium-term history</td></tr>
+        <tr><td>Major changes</td><td>Forever</td><td>Important milestones</td></tr>
+        <tr><td>Before deployments</td><td>1 month</td><td>Rollback capability</td></tr>
+    </table>
+
+    <h2>🚨 Emergency Scenarios</h2>
+
+    <h3>Computer Won't Start</h3>
+    <ol>
+        <li>Get new computer or fix current one</li>
+        <li>Install required software (Node.js, Git)</li>
+        <li>Restore from cloud backup (GitHub/Google Drive)</li>
+        <li>Or copy from external drive/USB</li>
+        <li>Website is back online!</li>
+    </ol>
+
+    <h3>Website Completely Broken</h3>
+    <ol>
+        <li>Don't panic! You have backups</li>
+        <li>Identify when it worked last</li>
+        <li>Restore from backup before the problem</li>
+        <li>Test website works</li>
+        <li>Figure out what caused the issue</li>
+        <li>Make changes more carefully next time</li>
+    </ol>
+
+    <h3>Accidentally Deleted Important File</h3>
+    <ol>
+        <li>Stop making any changes</li>
+        <li>Restore from most recent backup</li>
+        <li>File is back instantly</li>
+        <li>Continue your work</li>
+    </ol>
+
+    <h1 id="daily-operations">⚡ Daily Operations</h1>
+
+    <h2>5-Minute Updates</h2>
+
+    <h3>💰 Change Price</h3>
+    <ol>
+        <li>Open <code>src/data/products.js</code></li>
+        <li>Press Ctrl+F, type product name</li>
+        <li>Find <code>price: 2999</code></li>
+        <li>Change the number</li>
+        <li>Press Ctrl+S to save</li>
+        <li>Refresh website - price updated!</li>
+    </ol>
+
+    <h3>📦 Update Stock Status</h3>
+    <ol>
+        <li>Open <code>src/data/products.js</code></li>
+        <li>Find product</li>
+        <li>Change <code>inStock: true</code> to <code>inStock: false</code></li>
+        <li>Save and refresh</li>
+    </ol>
+
+    <h3>🏷️ Add Sale Badge</h3>
+    <ol>
+        <li>Open <code>src/data/products.js</code></li>
+        <li>Add <code>originalPrice: 3999</code> (must be higher than price)</li>
+        <li>Add <code>badge: "SALE"</code></li>
+        <li>Save and refresh</li>
+    </ol>
+
+    <h2>30-Minute Updates</h2>
+
+    <h3>📦 Add New Product</h3>
+    <div class="tip-box">
+        <strong>Pro Tip:</strong> Use <code>PRODUCT_TEMPLATE.js</code> as a starting point
+    </div>
+    <ol>
+        <li>Open <code>PRODUCT_TEMPLATE.js</code> - copy the template</li>
+        <li>Open <code>src/data/products.js</code></li>
+        <li>Paste template at the end (before the closing bracket)</li>
+        <li>Fill in your product details:
+            <ul>
+                <li><strong>id:</strong> Next number (check last product)</li>
+                <li><strong>name:</strong> Product name</li>
+                <li><strong>category:</strong> Must match category ID</li>
+                <li><strong>price:</strong> Sale price in rupees</li>
+                <li><strong>description:</strong> Product details</li>
+                <li><strong>images:</strong> Image URLs</li>
+            </ul>
+        </li>
+        <li>Save and refresh - product appears!</li>
+    </ol>
+
+    <h1 id="product-management">📦 Product Management</h1>
+
+    <h2>Product Structure</h2>
+    <pre>{
+  id: 123,
+  name: "Product Name",
+  category: "necklaces",
+  price: 2999,
+  originalPrice: 3999,        // Optional - for sales
+  description: "Description...",
+  images: [
+    "https://image-url.jpg"
+  ],
+  inStock: true,
+  isNewArrival: true,         // Optional - for new items
+  badge: "NEW",              // Optional: "NEW", "SALE", "LIMITED"
+  badgeColor: "bg-green-500", // Optional badge color
+  rating: 4.8,               // 1.0 to 5.0
+  sizes: ["Free Size"],       // Optional sizes
+  materials: ["Gold Plated"], // Optional materials
+  occasions: ["Party"]        // Optional occasions
+},</pre>
+
+    <h2>Editing Multiple Products</h2>
+    <h3>Price Changes - All Products:</h3>
+    <ol>
+        <li>Open <code>src/data/products.js</code></li>
+        <li>Press Ctrl+H</li>
+        <li>Find: <code>price: 2999</code></li>
+        <li>Replace: <code>price: 3499</code></li>
+        <li>Click "Replace All"</li>
+        <li>Save</li>
+    </ol>
+
+    <h3>Stock Updates - Multiple Products:</h3>
+    <ol>
+        <li>Press Ctrl+H</li>
+        <li>Find: <code>inStock: true</code></li>
+        <li>Replace: <code>inStock: false</code></li>
+        <li>Replace selected items only</li>
+    </ol>
+
+    <h2>Deleting Products</h2>
+    <div class="warning-box">
+        <strong>Important:</strong> Always backup before deleting!
+    </div>
+    <ol>
+        <li>Find the product (Ctrl+F)</li>
+        <li>Select from <code>{</code> to <code>},</code></li>
+        <li>Delete the entire block</li>
+        <li>Check that comma placement is correct</li>
+        <li>Save and test</li>
+    </ol>
+
+    <h1 id="image-management">🖼️ Image Management</h1>
+
+    <h2>Image Sources</h2>
+    <h3>Recommended Options:</h3>
+    <ul>
+        <li><strong>Imgur.com:</strong> Free, easy, reliable</li>
+        <li><strong>Unsplash:</strong> Free high-quality photos</li>
+        <li><strong>Pexels:</strong> Free stock photography</li>
+        <li><strong>Your own photos:</strong> Upload to any image hosting</li>
+    </ul>
+
+    <h2>Adding Product Images</h2>
+    <ol>
+        <li>Upload images to your chosen hosting</li>
+        <li>Copy the image URL</li>
+        <li>In <code>src/data/products.js</code>, update:</li>
+    </ol>
+    <pre>images: [
+  "https://your-image-url.jpg",
+  "https://your-second-image.jpg"  // Optional
+],</pre>
+
+    <h2>Category Images</h2>
+    <p>Location: <code>src/pages/Home.jsx</code> (line ~7)</p>
+    <pre>const categoryImages = {
+  'necklaces': 'https://your-necklace-image.jpg',
+  'earrings': 'https://your-earring-image.jpg',
+  // Add new categories here
+};</pre>
+
+    <h2>Image Specifications</h2>
+    <table>
+        <tr><th>Type</th><th>Size</th><th>Format</th><th>Max File Size</th></tr>
+        <tr><td>Product Images</td><td>800x800px</td><td>JPG, PNG</td><td>500KB</td></tr>
+        <tr><td>Category Images</td><td>300x400px</td><td>JPG, PNG</td><td>200KB</td></tr>
+        <tr><td>Hero Images</td><td>1920x1080px</td><td>JPG, PNG</td><td>1MB</td></tr>
+    </table>
+
+    <h1 id="brand-updates">🎨 Brand & Content Updates</h1>
+
+    <h2>Changing Brand Name</h2>
+    <p>File: <code>src/components/Header.jsx</code></p>
+    <p>Lines to change: 44, 54, 66</p>
+    <pre>&lt;span&gt;R&lt;/span&gt;        // Line 44 - First letter
+&lt;span&gt;&amp;amp;&lt;/span&gt;    // Line 54 - & symbol (keep or remove)
+&lt;span&gt;S&lt;/span&gt;        // Line 66 - Second letter</pre>
+
+    <h2>Updating Tagline</h2>
+    <p>File: <code>src/components/Header.jsx</code> (line 78)</p>
+    <pre>"Elite Imitation Jewellery"  // Change this text</pre>
+
+    <h2>Contact Information</h2>
+    <p>File: <code>src/pages/Contact.jsx</code></p>
+    <ul>
+        <li>Find phone numbers, emails, addresses</li>
+        <li>Update with your information</li>
+        <li>Test contact forms after changes</li>
+    </ul>
+
+    <h2>Home Page Content</h2>
+    <p>File: <code>src/pages/Home.jsx</code></p>
+    <ul>
+        <li><strong>Hero Text:</strong> Lines 37-42</li>
+        <li><strong>Trust Badges:</strong> Lines 120-147</li>
+        <li><strong>Section Headings:</strong> Search for text to update</li>
+    </ul>
+
+    <h1 id="website-deployment">🚀 Website Deployment</h1>
+
+    <h2>Development vs Production</h2>
+    <div class="tip-box">
+        <strong>Development:</strong> For testing changes locally<br>
+        <strong>Production:</strong> For live website
+    </div>
+
+    <h2>Building for Production</h2>
+    <ol>
+        <li>Make all your changes</li>
+        <li>Test everything locally (<code>npm run dev</code>)</li>
+        <li>Double-click <code>START_WEBSITE.bat</code></li>
+        <li>Choose option 2: "Build for Production"</li>
+        <li>Wait for "Build complete" message</li>
+        <li>Check the <code>dist</code> folder</li>
+    </ol>
+
+    <h2>Hosting Options</h2>
+
+    <h3>🌟 Netlify (Recommended - Free)</h3>
+    <ol>
+        <li>Go to Netlify.com</li>
+        <li>Sign up for free account</li>
+        <li>Drag and drop your <code>dist</code> folder</li>
+        <li>Website goes live instantly!</li>
+        <li>Get your custom domain: <code>your-name.netlify.app</code></li>
+    </ol>
+
+    <h3>🌟 Vercel (Alternative - Free)</h3>
+    <ol>
+        <li>Go to Vercel.com</li>
+        <li>Connect your GitHub repository</li>
+        <li>Automatic deployment on changes</li>
+        <li>Custom domain support</li>
+    </ol>
+
+    <h3>🏢 Traditional Hosting</h3>
+    <ol>
+        <li>Get hosting from GoDaddy, HostGator, etc.</li>
+        <li>Use FTP to upload <code>dist</code> folder</li>
+        <li>Configure domain DNS</li>
+        <li>Ensure server supports static sites</li>
+    </ol>
+
+    <h2>Update Process</h2>
+    <ol>
+        <li>Make changes in your local files</li>
+        <li>Test locally (<code>npm run dev</code>)</li>
+        <li>Build production (<code>npm run build</code>)</li>
+        <li>Upload <code>dist</code> folder to hosting</li>
+        <li>Check live website</li>
+    </ol>
+
+    <h2>🔄 Daily Deployment Workflow</h2>
+    <div class="tip-box">
+        <strong>Important:</strong> You MUST rebuild and upload after making any changes to see them on your live website!
+    </div>
+
+    <h3>Why You Need to Update Each Time:</h3>
+    <ul>
+        <li><strong>Development:</strong> Your source code (<code>src/</code> folder)</li>
+        <li><strong>Production:</strong> Built code (<code>dist/</code> folder)</li>
+        <li><strong>Server:</strong> Only sees the <code>dist</code> folder</li>
+        <li><strong>Changes:</strong> Only appear after rebuilding and uploading</li>
+    </ul>
+
+    <h3>Daily Update Process:</h3>
+    <div class="success-box">
+        <strong>For Small Changes (5 minutes):</strong>
+        <ol>
+            <li>Make your changes (add products, change prices, etc.)</li>
+            <li>Build new version: <code>npm run build</code></li>
+            <li>Upload new <code>dist</code> folder to server</li>
+            <li>Website updates instantly!</li>
+        </ol>
+    </div>
+
+    <h3>Practical Example - Tomorrow's Workflow:</h3>
+    <div class="tip-box">
+        <strong>Morning:</strong>
+        <ul>
+            <li>9:00 AM - Add 3 new necklaces</li>
+            <li>9:15 AM - Change prices on 10 items</li>
+            <li>9:30 AM - Update stock status</li>
+        </ul>
+        
+        <strong>Afternoon:</strong>
+        <ul>
+            <li>2:00 PM - Build website (<code>npm run build</code>)</li>
+            <li>2:05 PM - Upload <code>dist</code> folder</li>
+            <li>2:10 PM - All changes live!</li>
+        </ul>
+    </div>
+
+    <h3>Smart Workflow Tips:</h3>
+    <ul>
+        <li><strong>Batch Your Changes:</strong> Don't upload after every small change</li>
+        <li><strong>Make Multiple Changes:</strong> Add 5 products, update prices, then build once</li>
+        <li><strong>Saves Time:</strong> One upload for multiple changes</li>
+        <li><strong>Update Schedule:</strong>
+            <ul>
+                <li>Daily: Price changes, stock updates</li>
+                <li>Weekly: New products, category updates</li>
+                <li>Monthly: Major content changes, brand updates</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Common Questions & Answers:</h3>
+    <div class="warning-box">
+        <strong>Q: Do I need to upload everything each time?</strong><br>
+        <strong>A:</strong> Yes, but <code>dist</code> folder is optimized and small (usually 1-5MB)
+        
+        <br><br>
+        <strong>Q: Can I update just one file?</strong><br>
+        <strong>A:</strong> No, React builds everything together. Must upload complete <code>dist</code> folder
+        
+        <br><br>
+        <strong>Q: What if I make a mistake?</strong><br>
+        <strong>A:</strong> Keep previous <code>dist</code> folder as backup until new version works
+    </div>
+
+    <h3>Time Investment:</h3>
+    <table>
+        <tr><th>Update Type</th><th>Time Required</th><th>Frequency</th></tr>
+        <tr><td>Small updates</td><td>5-10 minutes</td><td>Daily</td></tr>
+        <tr><td>Medium updates</td><td>15-30 minutes</td><td>Weekly</td></tr>
+        <tr><td>Large updates</td><td>30-60 minutes</td><td>Monthly</td></tr>
+    </table>
+
+    <h3>Best Practices:</h3>
+    <div class="success-box">
+        <strong>Before Uploading:</strong>
+        <ul>
+            <li>Test all changes locally</li>
+            <li>Check new products display correctly</li>
+            <li>Verify prices and stock</li>
+            <li>Test mobile view</li>
+            <li>Build production version</li>
+        </ul>
+        
+        <strong>After Uploading:</strong>
+        <ul>
+            <li>Test live website</li>
+            <li>Check all new products</li>
+            <li>Verify prices are correct</li>
+            <li>Test contact forms</li>
+            <li>Keep backup of old version</li>
+        </ul>
+    </div>
+
+    <h1 id="troubleshooting">🛠️ Troubleshooting</h1>
+
+    <h2>Common Issues & Solutions</h2>
+
+    <h3>💥 Website Not Loading</h3>
+    <ol>
+        <li>Stop current server (Ctrl+C)</li>
+        <li>Restart: <code>npm run dev</code></li>
+        <li>Check for error messages in terminal</li>
+        <li>Clear browser cache (Ctrl+F5)</li>
+    </ol>
+
+    <h3>🖼️ Images Not Showing</h3>
+    <ol>
+        <li>Test image URLs in browser</li>
+        <li>Check for typos in URLs</li>
+        <li>Ensure images are publicly accessible</li>
+        <li>Check file paths for local images</li>
+    </ol>
+
+    <h3>📦 Products Not Displaying</h3>
+    <ol>
+        <li>Check for syntax errors in <code>products.js</code></li>
+        <li>Ensure product IDs are unique</li>
+        <li>Verify category names match exactly</li>
+        <li>Check comma placement</li>
+    </ol>
+
+    <h3>🎨 Styling Issues</h3>
+    <ol>
+        <li>Hard refresh browser (Ctrl+F5)</li>
+        <li>Clear browser cache</li>
+        <li>Restart development server</li>
+        <li>Check for CSS syntax errors</li>
+    </ol>
+
+    <h2>Error Messages</h2>
+    <div class="warning-box">
+        <strong>Most Common:</strong> "Unexpected token" or "Missing comma"
+    </div>
+    <p><strong>Solution:</strong> Check for missing commas, brackets, or quotes in your code.</p>
+
+    <h1 id="emergency-contacts">📞 Emergency Contacts</h1>
+
+    <h2>When to Get Help</h2>
+    <ul>
+        <li>Website completely broken</li>
+        <li>Can't figure out error messages</li>
+        <li>Need major changes</li>
+        <li>Hosting issues</li>
+    </ul>
+
+    <h2>Self-Help First</h2>
+    <ol>
+        <li>Check this manual</li>
+        <li>Search online for error messages</li>
+        <li>Restore from backup</li>
+        <li>Undo recent changes</li>
+    </ol>
+
+    <h2>Professional Help</h2>
+    <ul>
+        <li>Hire a React developer</li>
+        <li>Contact web development agencies</li>
+        <li>Use freelance platforms (Upwork, Fiverr)</li>
+    </ul>
+
+    <div class="footer">
+        <p><strong>R&S Jewellery Website Management Manual</strong></p>
+        <p>Version 1.0 | Generated: <span id="footer-date"></span></p>
+        <p>For support, refer to the digital documentation files in your project folder.</p>
+        <p><em>Remember: Always backup before making changes!</em></p>
+    </div>
+
+    <script>
+        document.getElementById('date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        document.getElementById('footer-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>

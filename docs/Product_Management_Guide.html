@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📦 Product Management Table Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 30px;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 20px auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 3px solid #D4AF37;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #1a1a1a;
+            font-size: 2.5em;
+            margin: 0;
+            background: linear-gradient(135deg, #D4AF37, #F4E4C1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header h2 {
+            color: #D4AF37;
+            font-size: 1.8em;
+            margin: 10px 0;
+        }
+        h2 {
+            color: #1a1a1a;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        code {
+            background: #f8f8f8;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #ddd;
+            color: #e83e8c;
+        }
+        pre {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #D4AF37;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        strong {
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+        .success-box {
+            background: #e6ffe6;
+            border: 1px solid #44ff44;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: #e6f3ff;
+            border: 1px solid #2196F3;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .feature-card h4 {
+            color: #D4AF37;
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        .step-number {
+            display: inline-block;
+            background: #D4AF37;
+            color: white;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📦 Product Management Table</h1>
+            <h2>Professional Product Editor & Manager</h2>
+            <p>Edit, Update, and Maintain All Your Products in One Place</p>
+        </div>
+
+        <div class="success-box">
+            <h3>🎯 What This Tool Does:</h3>
+            <p><strong>Edit any product detail directly</strong> - prices, stock, names, descriptions, and more - all in one professional table interface!</p>
+        </div>
+
+        <h2>🚀 How to Access</h2>
+        <ol>
+            <li>Go to Admin Dashboard: <code>http://localhost:5173/admin</code></li>
+            <li>Login with your credentials</li>
+            <li>Click <strong>"Product Manager"</strong> in the left sidebar</li>
+            <li>You're in the professional product management table!</li>
+        </ol>
+
+        <h2>🎛️ Features Overview</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>✏️ Inline Editing</h4>
+                <ul>
+                    <li>Edit product names</li>
+                    <li>Update prices instantly</li>
+                    <li>Change stock quantities</li>
+                    <li>Modify descriptions</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h4>🔍 Smart Search</h4>
+                <ul>
+                    <li>Search by product name</li>
+                    <li>Filter by SKU</li>
+                    <li>Stock status filtering</li>
+                    <li>Multiple sort options</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h4>📊 Quick Stats</h4>
+                <ul>
+                    <li>Total products count</li>
+                    <li>In stock vs out of stock</li>
+                    <li>Total inventory value</li>
+                    <li>Live updates</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>✏️ How to Edit Products</h2>
+
+        <h3>Step 1: Find Your Product</h3>
+        <ul>
+            <li>Use the <strong>search bar</strong> to find products by name</li>
+            <li>Filter by <strong>status</strong> (In Stock/Out of Stock)</li>
+            <li><strong>Sort</strong> by name, price, stock, or SKU</li>
+        </ul>
+
+        <h3>Step 2: Start Editing</h3>
+        <ol>
+            <li>Click the <strong>"Edit"</strong> button next to any product</li>
+            <li>The row will transform into editable fields</li>
+            <li>All fields become input boxes</li>
+        </ol>
+
+        <h3>Step 3: Make Your Changes</h3>
+        <div class="info-box">
+            <h4>📝 What You Can Edit:</h4>
+            <table>
+                <tr><th>Field</th><th>What to Change</th><th>Example</th></tr>
+                <tr><td>Product Name</td><td>Main product title</td><td>"Gold Wedding Necklace"</td></tr>
+                <tr><td>Description</td><td>Product details</td><td>"Beautiful gold-plated..."</td></tr>
+                <tr><td>SKU</td><td>Product code</td><td>"RS-NECK-001"</td></tr>
+                <tr><td>Price</td><td>Selling price</td><td>2999</td></tr>
+                <tr><td>Original Price</td><td>For sale badges</td><td>3999</td></tr>
+                <tr><td>Stock Count</td><td>Quantity available</td><td>25</td></tr>
+                <tr><td>Stock Status</td><td>In/Out of stock</td><td>In Stock</td></tr>
+                <tr><td>New Arrival</td><td>Show NEW badge</td><td>true/false</td></tr>
+                <tr><td>Badge</td><td>Sale/Limited badges</td><td>"SALE"</td></tr>
+                <tr><td>Rating</td><td>Star rating</td><td>4.8</td></tr>
+            </table>
+        </div>
+
+        <h3>Step 4: Save or Cancel</h3>
+        <ul>
+            <li><strong>Save:</strong> Click the green "Save" button to apply changes</li>
+            <li><strong>Cancel:</strong> Click "Cancel" to discard changes</li>
+            <li><strong>Delete:</strong> Click red "Delete" to remove product (with confirmation)</li>
+        </ul>
+
+        <h2>🔍 Search & Filter Guide</h2>
+
+        <h3>Search Bar</h3>
+        <ul>
+            <li>Type any part of product name</li>
+            <li>Search works instantly</li>
+            <li>Case-insensitive</li>
+        </ul>
+
+        <h3>Status Filter</h3>
+        <ul>
+            <li><strong>All Products:</strong> Show everything</li>
+            <li><strong>In Stock:</strong> Only available products</li>
+            <li><strong>Out of Stock:</strong> Only unavailable products</li>
+        </ul>
+
+        <h3>Sort Options</h3>
+        <ul>
+            <li><strong>Name:</strong> Alphabetical order</li>
+            <li><strong>Price:</strong> Low to high</li>
+            <li><strong>Stock:</strong> Low to high quantity</li>
+            <li><strong>SKU:</strong> Product code order</li>
+        </ul>
+
+        <h2>📊 Statistics Dashboard</h2>
+
+        <h3>Bottom Summary Cards</h3>
+        <div class="info-box">
+            <h4>📈 What You See:</h4>
+            <ul>
+                <li><strong>Total Products:</strong> All products in your system</li>
+                <li><strong>In Stock:</strong> Available products count</li>
+                <li><strong>Out of Stock:</strong> Unavailable products count</li>
+                <li><strong>Total Value:</strong> Stock count × price for all products</li>
+            </ul>
+        </div>
+
+        <h2>📥 Export Function</h2>
+
+        <h3>CSV Export</h3>
+        <ol>
+            <li>Click the <strong>"📥 Export CSV"</strong> button</li>
+            <li>File downloads automatically</li>
+            <li>Contains all current product data</li>
+            <li>Perfect for backup or Excel analysis</li>
+        </ol>
+
+        <h2>⚡ Daily Workflow Tips</h2>
+
+        <h3>Morning Updates (5 minutes)</h3>
+        <ol>
+            <li>Open Product Manager</li>
+            <li>Filter "Out of Stock" to see what needs restocking</li>
+            <li>Update stock counts for new inventory</li>
+            <li>Update prices if needed</li>
+        </ol>
+
+        <h3>Price Updates (2 minutes per batch)</h3>
+        <ol>
+            <li>Search for products to update</li>
+            <li>Click "Edit" on first product</li>
+            <li>Change price</li>
+            <li>Click "Save"</li>
+            <li>Repeat for next product</li>
+        </ol>
+
+        <h3>Stock Management (3 minutes)</h3>
+        <ol>
+            <li>Filter by "Out of Stock"</li>
+            <li>Edit products that are now available</li>
+            <li>Update stock counts</li>
+            <li>Change status to "In Stock"</li>
+        </ol>
+
+        <h2>🚨 Important Notes</h2>
+
+        <div class="warning-box">
+            <h3>⚠️ Remember:</h3>
+            <ul>
+                <li><strong>Save frequently</strong> - Changes aren't saved until you click "Save"</li>
+                <li><strong>Refresh data</strong> - Click "Refresh" button to see latest changes</li>
+                <li><strong>Delete carefully</strong> - Deleted products can't be recovered easily</li>
+                <li><strong>Backup regularly</strong> - Use Export CSV for backups</li>
+            </ul>
+        </div>
+
+        <h2>🎯 Professional Use Cases</h2>
+
+        <h3>Daily Price Updates</h3>
+        <ul>
+            <li>Search for specific product categories</li>
+            <li>Edit multiple products quickly</li>
+            <li>Update sale prices</li>
+            <li>Add original prices for sale badges</li>
+        </ul>
+
+        <h3>Inventory Management</h3>
+        <ul>
+            <li>Check out-of-stock items</li>
+            <li>Update stock quantities</li>
+            <li>Change availability status</li>
+            <li>Monitor total inventory value</li>
+        </ul>
+
+        <h3>Product Information Updates</h3>
+        <ul>
+            <li>Improve product descriptions</li>
+            <li>Add SKU codes for better tracking</li>
+            <li>Update product names for SEO</li>
+            <li>Add badges for marketing</li>
+        </ul>
+
+        <h2>🔧 Troubleshooting</h2>
+
+        <h3>Changes Not Saving?</h3>
+        <ul>
+            <li>Make sure you click "Save" button</li>
+            <li>Check for error messages</li>
+            <li>Try refreshing the page</li>
+            <li>Check internet connection</li>
+        </ul>
+
+        <h3>Can't Find Product?</h3>
+        <ul>
+            <li>Try different search terms</li>
+            <li>Check spelling</li>
+                <li>Remove filters to see all products</li>
+                <li>Use "All Products" filter</li>
+            </ul>
+
+            <h3>Table Not Loading?</h3>
+            <ul>
+                <li>Click "Refresh" button</li>
+                <li>Check browser console for errors</li>
+                <li>Try reloading the page</li>
+                <li>Ensure you're logged in properly</li>
+            </ul>
+
+            <h2>🎉 Success Tips</h2>
+
+            <div class="success-box">
+                <h3>🏆 Best Practices:</h3>
+                <ul>
+                    <li><strong>Edit one product at a time</strong> for accuracy</li>
+                    <li><strong>Use search</strong> to find products quickly</li>
+                    <li><strong>Export CSV</strong> before major changes</li>
+                    <li><strong>Update stock daily</strong> for accurate inventory</li>
+                    <li><strong>Use consistent SKU codes</strong> for better tracking</li>
+                </ul>
+            </div>
+
+            <h2>📱 Mobile vs Desktop</h2>
+
+            <div class="info-box">
+                <h4>💻 Desktop (Recommended):</h4>
+                <ul>
+                    <li>Full table visibility</li>
+                    <li>Easier editing with keyboard</li>
+                    <li>Better for bulk changes</li>
+                    <li>Export functionality works best</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>📱 Mobile (Possible):</h4>
+                <ul>
+                    <li>Horizontal scrolling required</li>
+                    <li>Smaller touch targets</li>
+                    <li>Good for quick updates</li>
+                    <li>Search works well</li>
+                </ul>
+            </div>
+
+            <div class="footer">
+                <p><strong>📦 Product Management Table Guide</strong></p>
+                <p>Your Professional Product Editor - Edit, Update, and Maintain with Ease!</p>
+                <p><em>Remember: Save your changes and backup regularly!</em></p>
+            </div>
+        </div>
+    </body>
+</html>

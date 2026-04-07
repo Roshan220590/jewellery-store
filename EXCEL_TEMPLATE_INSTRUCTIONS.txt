@@ -1,0 +1,66 @@
+EXCEL TEMPLATE INSTRUCTIONS
+===========================
+
+PROBLEM: The .xlsx file I created earlier was actually CSV format, not real Excel.
+
+SOLUTION: Use one of these methods:
+
+METHOD 1: Use the CSV file (Recommended)
+---------------------------------------
+1. Open the file: product_import_template.csv
+2. Excel will open it correctly
+3. Add your 100 products
+4. Save as CSV again
+
+METHOD 2: Create Excel Template Manually
+---------------------------------------
+1. Open Excel
+2. Create these headers in Row 1 (A to V):
+
+A: id
+B: name  
+C: category
+D: price
+E: originalPrice
+F: description
+G: inStock
+H: stockCount
+I: isNewArrival
+J: badge
+K: badgeColor
+L: rating
+M: sizes
+N: materials
+O: occasions
+P: weight
+Q: dimensions
+R: sku
+S: cost_purchasePrice
+T: cost_packagingCost
+U: cost_logisticsCost
+V: cost_otherCharges
+W: images
+
+3. Fill in Row 2 with this sample data:
+101,Sample Product 1,necklaces,2999,3999,"Beautiful gold-plated necklace",true,25,true,NEW,bg-green-500,4.8,Free Size,Gold Plated,Party,10g,2cm x 3cm,RS-NECK-001,1500,50,100,50,"https://i.imgur.com/sample1.jpg"
+
+4. Continue adding your products in subsequent rows
+5. Save as CSV (not Excel)
+
+METHOD 3: Copy-Paste from Below
+--------------------------------
+Copy this table and paste into Excel:
+
+| id | name | category | price | originalPrice | description | inStock | stockCount | isNewArrival | badge | badgeColor | rating | sizes | materials | occasions | weight | dimensions | sku | cost_purchasePrice | cost_packagingCost | cost_logisticsCost | cost_otherCharges | images |
+|----|------|----------|-------|---------------|-------------|---------|------------|--------------|--------|------------|--------|-------|------------|------------|--------|------------|-----|-------------------|-------------------|-------------------|-------------------|-------|
+| 101 | Sample Product 1 | necklaces | 2999 | 3999 | Beautiful gold-plated necklace | true | 25 | true | NEW | bg-green-500 | 4.8 | Free Size | Gold Plated | Party | 10g | 2cm x 3cm | RS-NECK-001 | 1500 | 50 | 100 | 50 | https://i.imgur.com/sample1.jpg |
+
+IMPORTANT NOTES:
+===============
+- Save as CSV, not Excel (.xlsx)
+- Use quotes around text with spaces
+- For multiple images: "url1.jpg;url2.jpg"
+- For multiple sizes: "6;7;8"
+- Test with 5 products first
+
+The CSV file I created (product_import_template.csv) should open correctly in Excel now!
