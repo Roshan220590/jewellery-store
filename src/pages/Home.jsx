@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
+import HeroVideo from '../components/HeroVideo';
 import centralDataManager from '../data/centralDataManager';
 import websiteProductService from '../data/websiteProductService';
 
@@ -109,8 +110,8 @@ export default function Home() {
                 playsInline
                 className="w-full h-[500px] object-cover"
                 poster="/images/home/hero.jpg">
-                <source src="/videos/jewellery-showcase.mp4" type="video/mp4" />
-                <source src="/videos/jewellery-showcase.webm" type="video/webm" />
+                <source src="/videos/jewellery-hero.mp4" type="video/mp4" />
+                <source src="/videos/jewellery-hero.webm" type="video/webm" />
                 {/* Fallback slideshow if video doesn't load */}
                 <div className="w-full h-full relative jewellery-slideshow">
                   <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80" alt="Necklaces" className="w-full h-full object-cover absolute inset-0" />
