@@ -109,15 +109,15 @@ export default function Home() {
                 loop 
                 playsInline
                 className="w-full h-[500px] object-cover"
-                poster="/images/home/hero.jpg">
+                poster="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80">
                 <source src="/videos/jewellery-hero.mp4" type="video/mp4" />
                 <source src="/videos/jewellery-hero.webm" type="video/webm" />
                 {/* Fallback slideshow if video doesn't load */}
                 <div className="w-full h-full relative jewellery-slideshow">
-                  <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80" alt="Necklaces" className="w-full h-full object-cover absolute inset-0" />
-                  <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80" alt="Earrings" className="w-full h-full object-cover absolute inset-0" />
-                  <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=600&q=80" alt="Bangles" className="w-full h-full object-cover absolute inset-0" />
-                  <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80" alt="Rings" className="w-full h-full object-cover absolute inset-0" />
+                  <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Mountain landscape" className="w-full h-full object-cover absolute inset-0" />
+                  <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=600&q=80" alt="Ocean sunset" className="w-full h-full object-cover absolute inset-0" />
+                  <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80" alt="Forest path" className="w-full h-full object-cover absolute inset-0" />
+                  <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80" alt="Lake reflection" className="w-full h-full object-cover absolute inset-0" />
                 </div>
               </video>
               {/* Overlay gradient for better text visibility */}
